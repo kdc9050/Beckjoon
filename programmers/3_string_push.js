@@ -16,21 +16,20 @@
 // "atat"  || "tata"   ||     1
 // "abc"   || "abc"    ||     0
 
-function solution(a,b){
-    if(a!==b){
-        return 1
+function solution(A, B) {
+    if (A.length !== B.length) {
+      return -1; 
     }
-
-    if(a===b){
-        return 0
-    }
-
-
-
     
-    return;
-}
-
+    for (let i = 0; i < A.length; i++) {
+      if (A === B) {
+        return i; 
+      }
+      A = A[A.length - 1] + A.substring(0, A.length - 1); 
+    }
+    
+    return -1; 
+  }
 
 console.log(
     solution("hello", "ohell") == 1
